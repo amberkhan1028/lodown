@@ -1,0 +1,22 @@
+{
+  "name": "lodown-amberkhan",
+  "version": "1.0.1",
+  "description": "my lodown library",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amberkhan1028/lodown.git"
+  },
+  "author": "amber khan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amberkhan1028/lodown/issues"
+  },
+  "homepage": "https://github.com/amberkhan1028/lodown#readme"
+}
