@@ -5,9 +5,9 @@
  /**
   * identity: created to simply return value that is passed through it, without changing value in any way. 
   * 
-  * @param: any value
+  * @param: {Any datatype}: value: value of any type to be passed through function 
   * 
-  * @return {Array}: returns unchanged value
+  * @return {Any datatype}: returns unchanged value
   * 
   */
  function identity(value) {
@@ -18,9 +18,9 @@
   /**
   * typeOf: Designed to take any value and return the name of its type, in string form. 
   * 
-  * @param : any value
+  * @param {Any datatype} *any value*: value of any type to be passed through function 
   * 
-  * @return {Array}: the type of value as a string.  
+  * @return {String}: the type of value as a string.  
   * 
   */
  function typeOf(value) {
@@ -44,51 +44,16 @@
 };
  module.exports.typeOf = typeOf;
  
-  /**
-  * typeOf: designed to take any value and return a string of the value's type. 
-  * 
-  * @param: any value
-  * 
-  * @return: string of value's type
-  * 
-  */
-function typeOf (value) {
-    // check if value is string
-    if (typeof value === "string") {
-        return "string";
-     // check if value is undefined
-    } else if (typeof value === "undefined") {
-        return "undefined";
-      // check if value is number
-    } else if (typeof value === "number") {
-        return "number";
-      // check if value is boolean
-    } else if (typeof value === "boolean") {
-        return "boolean";
-      // check if value is function
-    } else if (typeof value === "function") {
-        return "function";
-      // check if value is null
-    } else if (value === null) {
-        return "null";
-      // check if value is array
-    } else if (Array.isArray(value)) {
-        return "array";
-    } else {
-          // else, return object
-        return "object";
-    }
-};
 
   /**
   * first: created to take an array and a number and return the first <number> amount of elements in array. 
   * If array is not an array or numnber is negative, returns an empty array. Otherwise, if number is not given or 
   * not a number, returns first element of array. 
   * 
-  * @param {Array} collection: array to return values from
-  * @param number: number of elements to return from array
+  * @param {Array} array: array to return values from
+  * @param {Number} number: number of elements to return from array
   * 
-  * @return array elements: returns first <number> amount of elements of array
+  * @return {Array} array: returns first <number> amount of elements of array
   * 
   */
     function first (array, number) {
@@ -114,11 +79,10 @@ module.exports.first = first;
   * If array is not an array or numnber is negative, returns an empty array. If number is not given or 
   * not a number, returns last element of array. If number is given but is larger than array, returns the entire array.
   * 
-  * @param {Array} collection: array to return values from
-  * @param number: number of elements to return from array
+  *@param {Array} array: array to return values from
+  *@param {Number} number: number of elements to return from array
   * 
-  * @return array elements: returns last <number> amount of elements of array
-  * 
+  *@return {Array} array: returns last <number> amount of elements of array
   */
   function last (array, number){
     if (!Array.isArray(array) || number < 0){
@@ -137,10 +101,10 @@ module.exports.last = last;
   * indexOf: Designed to take an array and a value, loop through the array, find the first instance of that value, 
   * and return the value's index in the array. 
   * 
-  * @param {Array}:  Array to loop through 
+  * @param {Array}: array:  Array to loop through 
   * @param {Value} value: value to search for in array
   * 
-  * @return {index}: index of value in array
+  * @return {Number}: index of value in array
   * 
   */
 function indexOf (array, value){
@@ -160,8 +124,8 @@ function indexOf (array, value){
   /**
   * contains: Designed to take an array and a value, and return true if the array contains the value, and false otherwise. 
   * 
-  * @param {Array} collection: Array to search for value in 
-  * @param {value} value: value to search for in array
+  * @param {Array} array: Array to search for value in 
+  * @param {*any value*} value: value to search for in array
   * 
   * @return {boolean}: true if array contains value, false if otherwise 
   * 
@@ -193,14 +157,16 @@ function each(collection, action) {
     }
 }
 module.exports.each = each;
- 
+  
   /**
-  * unique: Designed to 
+  * unique: Designed to take an array and return a new array with all the
+  * duplicate values of the given array removed. 
   * 
-  * @param {Array or Object} collection:  
-  * @param {Function} test:  
+  * @param {Array} array:  An array to loop over and and take 
+  * values from. 
   * 
-  * @return {Array}:  
+  * @return {Array}: array: a new array containing the values of the 
+  * given array, with any duplicate values removed. 
   * 
   */
 function unique (array) {
@@ -219,13 +185,19 @@ let finalArr = [];
 
  module.exports.unique = unique;
  
-  /**
-  * filter: Designed to 
+ 
+   /**
+  * filter: Takes an array and function, which acts like a test, and returns a new array of 
+  * all the elements that return true after being passed through the provided function.
   * 
-  * @param {Array or Object} collection:  
-  * @param {Function} test:  
+  * @param {Array or Object} array: array to loop through 
+  * @param {Function} func: the provided function that is called once for each 
+  * element of the array, and constructs a new array of all the values that return
+  * true after being passed through this function
   * 
-  * @return {Array}:  
+  * @return {Array}: a new array containing all the elements that returned true  
+  * after being passed through the provided function. If no elements return true, an empty 
+  * array is returned. 
   * 
   */
 function filter (array, func) {
@@ -248,8 +220,8 @@ for (var i = 0; i < array.length; i++) {
   * reject: created to take an array and a function, pass each element of the array through the function, 
   * and return a new array of all these elements of the array that returned values of false after being passed through function
   * 
-  * @param {Array} collection: array to loop through  
-  * @param {Function} test: function to be executed on each value of array
+  * @param {Array} array: array to loop through  
+  * @param {Function} func: function to be executed on each collection and elements and indexes within each collection
   * 
   * @return {Array}: new array of array elements that returned false after being passed through function 
   * 
@@ -274,11 +246,10 @@ for (var i = 0; i < array.length; i++) {
   * and return a new array of all the elements of the array that returned values of true after being passed through function, 
   * and another array of all  the elements of the array that returned values of false after being passed through function
   * 
-  * @param {Array} collection: array to loop through  
-  * @param {Function} test: function to be executed on each value of array
+  * @param {Array} array: array to loop through  
+  * @param {Function} func: function to be executed on each collection and elements and indexes within each collection 
   * 
-  * @return {Array}: a new array of array elements that returned true after being passed through function 
-  * @return {Array}: a new array of array elements that returned false after being passed through function 
+  * @return {Array}: a new array that contains 2 arrays: one array of elements that returned true after being passed through the function, and one array of elements that returned false after being passed through the function  
   * 
   */
  function partition (array, func) {
@@ -289,12 +260,12 @@ for (var i = 0; i < array.length; i++) {
  module.exports.partition = partition;
  
   /**
-  * map: Designed to 
+  * map: Designed to create a new array populated with the results of calling a provided function on every element in the calling array.
   * 
   * @param {Array or Object} collection: collection to pass function through
-  * @param {Function} test:  function to pass theough elements of collection
+  * @param {Function} func:  function to pass theough elements of collection
   * 
-  * @return {Array}:  array of new values after function passed through collection
+  * @return {Array} finalArr:  array of new values after function passed through collection
   * 
   */
  function map (collection, func) {
@@ -323,7 +294,7 @@ for (var i = 0; i < array.length; i++) {
   * pluck: Designed to take an array and a property, and return an array containing the value of <property> for every element in <array>
   * 
   * @param {Array or Object} collection:  array of elements
-  * @param property : property to look for in each element of array
+  * @param {String} property : property to look for in each element of array
   * 
   * @return {Array}:  an array containing the value of <property> for every element in <array>
   * 
@@ -341,10 +312,11 @@ let final = array.map(function(element) {
  
   /**
   * every: Designed to take a collection and a function, pass the collection through the function, and return true if every element of the function
-  * returns true after being passed through function, else return false
+  * returns true after being passed through function, else return false. If no function is given, "false" is returned if even one element of the collection 
+  * has a falsey value, otherwise, if all the values in the collection result to truthy, "true" is returned. 
   * 
   * @param {Array or Object} collection: array or object to pass function through
-  * @param {Function} test:  function to pass array or object through
+  * @param {Function} func:  function to pass array or object through
   * 
   * @return {boolean}:  true if every element of collection returns true after being passed through function, false if otherwise
   * 
@@ -381,10 +353,11 @@ else {
  
  /**
   * some: Designed to take a collection and a function, pass the collection through the function, and return true if even one element of the function
-  * returns true after being passed through function, else return false
+  * returns true after being passed through function, else return false. If no function is given, "true" is returned if even one element of the collection 
+  * has a truthy value, otherwise, if all the values in the collection result to falsey, "false" is returned. 
   * 
   * @param {Array or Object} collection: array or object to pass function through
-  * @param {Function} test:  function to pass array or object through
+  * @param {Function} func:  function to pass array or object through
   * 
   * @return {boolean}:  true if at least one element of collection returns true after being passed through function, false if otherwise
   * 
@@ -423,10 +396,11 @@ if (func !== undefined) {
   * that previous result of seed passing through function.If no seed is given, function is passed through first element of collection initially, and then 
   * through the result of the first element. This repeats until the last iteration, and then the final value is returned. 
   * 
-  * @param {Array or Object} collection:  array or object to pass function through
-  * @param {Function} test:  function to pass through each element of function 
+  * @param {Array} arr:  array or object to pass function through
+  * @param {Function} func:  function to pass through each element of function 
+  * @param {any type} seed: an optional value to be passed to the function as the initial value. 
   * 
-  * @return {value}:  value of final pass through function
+  * @return {any value}:  value of final pass through function
   * 
   */
   
