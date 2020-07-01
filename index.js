@@ -5,7 +5,7 @@
  /**
   * identity: created to simply return value that is passed through it, without changing value in any way. 
   * 
-  * @param: {Any datatype}: value: value of any type to be passed through function 
+  * @param: {Any datatype}: *value*: value of any type to be passed through function 
   * 
   * @return {Any datatype}: returns unchanged value
   * 
@@ -125,7 +125,7 @@ function indexOf (array, value){
   * contains: Designed to take an array and a value, and return true if the array contains the value, and false otherwise. 
   * 
   * @param {Array} array: Array to search for value in 
-  * @param {*any value*} value: value to search for in array
+  * @param {*any value*} *value*: value to search for in array
   * 
   * @return {boolean}: true if array contains value, false if otherwise 
   * 
@@ -190,9 +190,9 @@ let finalArr = [];
   * filter: Takes an array and function, which acts like a test, and returns a new array of 
   * all the elements that return true after being passed through the provided function.
   * 
-  * @param {Array or Object} array: array to loop through 
-  * @param {Function} func: the provided function that is called once for each 
-  * element of the array, and constructs a new array of all the values that return
+  * @param {Array} array: array to loop through 
+  * @param {Function} func: the provided function that is called once upon each element, index, and entire collection.
+  * and constructs a new array of all the values that return
   * true after being passed through this function
   * 
   * @return {Array}: a new array containing all the elements that returned true  
@@ -293,10 +293,10 @@ for (var i = 0; i < array.length; i++) {
   /**
   * pluck: Designed to take an array and a property, and return an array containing the value of <property> for every element in <array>
   * 
-  * @param {Array or Object} collection:  array of elements
+  * @param {Array or Object} array:  array of elements
   * @param {String} property : property to look for in each element of array
   * 
-  * @return {Array}:  an array containing the value of <property> for every element in <array>
+  * @return {Array}: an array containing the value of <property> for every element in <array>
   * 
   */
  function pluck (array, property) {
@@ -400,7 +400,7 @@ if (func !== undefined) {
   * @param {Function} func:  function to pass through each element of function 
   * @param {any type} seed: an optional value to be passed to the function as the initial value. 
   * 
-  * @return {any value}:  value of final pass through function
+  * @return {any value}: *value*: value of final pass through function
   * 
   */
   
@@ -434,9 +434,9 @@ function reduce (arr, func, seed) {
   * If more objects are passed in,  their properties are copied to <object 1> as well, in the order they are passed in. The final <object 1>
   * is then returned. 
   * 
-  * @param {Object} collection: object1 to to recieve the copied properties of object 1
-  * @param {Object} collection: object2 to copy properties into object1
-  * @param {Object} collection: optional objectN(s) to copy properties into object1
+  * @param {Object} obj1: object1 to to recieve the copied properties of object 1
+  * @param {Object} obj2: object2 to copy properties into object1
+  * @param {Object} objN: optional objectN(s) to copy properties into object1
   * 
   * 
   * @return {object}:  final object1 of copied properties of object2 and optional objectN(s). 
