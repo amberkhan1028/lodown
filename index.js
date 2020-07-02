@@ -5,9 +5,9 @@
  /**
   * identity: created to simply return value that is passed through it, without changing value in any way. 
   * 
-  * @param: {Any datatype}: *value*: value of any type to be passed through function 
+  * @param: {*Any datatype*}: value: value of any type to be passed through function 
   * 
-  * @return {Any datatype}: returns unchanged value
+  * @return {*Any datatype*}: value: returns unchanged value
   * 
   */
  function identity(value) {
@@ -18,7 +18,7 @@
   /**
   * typeOf: Designed to take any value and return the name of its type, in string form. 
   * 
-  * @param {Any datatype} *any value*: value of any type to be passed through function 
+  * @param {*Any datatype*} value: value of any type to be passed through function 
   * 
   * @return {String}: the type of value as a string.  
   * 
@@ -102,7 +102,7 @@ module.exports.last = last;
   * and return the value's index in the array. 
   * 
   * @param {Array}: array:  Array to loop through 
-  * @param {Value} value: value to search for in array
+  * @param {*Value*} value: value to search for in array
   * 
   * @return {Number}: index of value in array
   * 
@@ -398,9 +398,9 @@ if (func !== undefined) {
   * 
   * @param {Array} arr:  array or object to pass function through
   * @param {Function} func:  function to pass through each element of function 
-  * @param {any type} seed: an optional value to be passed to the function as the initial value. 
+  * @param {*Any datatype*} seed: an optional value to be passed to the function as the initial value. 
   * 
-  * @return {any value}: *value*: value of final pass through function
+  * @return {*Any datatype*}: value: value of final pass through function
   * 
   */
   
